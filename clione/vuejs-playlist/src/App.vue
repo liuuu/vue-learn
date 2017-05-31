@@ -1,18 +1,23 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <button v-on:click="greeting()">greet</button>
+    <app-header></app-header>
     <ninjas></ninjas>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Ninjas from './Ninjas.vue'
+
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Ninjas from './components/Ninjas.vue'
 
 
 export default {
   components: {
-    'ninjas': Ninjas
+    'ninjas': Ninjas,
+    'app-header': Header,
+    'app-footer': Footer
   },
   data () {
     return {
