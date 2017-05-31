@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="vue-app">
+    <h1>{{greet('afternooon')}}</h1>
+    <p>
+      <a :href="website">baidu</a>
+    </p>
+    <p>Name: {{name}}</p>
+
+  </div>
+
+  <div class="vue-test">
+    <p>age: {{age}}</p>
+    <button v-on:click.once="add(4)">add a</button>
+    <button v-on:click="subtract(4)">minus a</button>
+    <div class="canvas"  v-on:mousemove="updateCor">
+      {{x}}, {{y}}
+    </div>
+    <div>
+      <a v-on:click.prevent="click" href="http:baidu.com">baidu</a>
+    </div>
+    <input type="text"  v-model="age" />
+
+    <div v-on:click="available=!available" v-bind:class="{available: available}">
+      <span>nihao</span>
+    </div>
+  </div>
+
+  <div class="condition">
+    <button v-on:click="error=!error">Toggle Error</button>
+    <button v-on:click="success=!success">Toggle Success</button>
+    <!-- <p v-if="error">this is a error</p>
+    <p v-else-if="success">whoosse this is a success</p> -->
+
+    <p v-show="error">this is error</p>
+    <p v-show="success">success</p>
+  </div>
+
+  <div class="v-for">
+    <h1>Looping lists</h1>
+    <ul>
+      <li v-for="(name, index) in names"> {{index}} {{name}}</li>
+    </ul>
+  </div>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
