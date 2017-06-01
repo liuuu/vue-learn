@@ -1,7 +1,7 @@
 <template id="">
   <div id="add-blog">
     <h2>Add a new blog</h2>
-    <form  method="post">
+    <form  method="post" v-if="!submitted">
       <label for="">Blog Title:</label>
       <input type="text" v-model="blog.title">
       <label for="">Blog Content</label>
@@ -17,11 +17,15 @@
         <label for="">cheese</label>
         <input type="checkbox" name="" value="cheese" v-model="blog.categories">
       </div>
+      <label for="">Authors:</label>
+      <select class="" name="" v-model="blog.author">
+        <option v-for="author in authors">{{author}}</option>
+      </select>
+      <button type="button" name="button" v-on:click.prevent="post()">Add blog</button>
     </form>
-    <label for="">Authors:</label>
-    <select class="" name="" v-model="blog.author">
-      <option v-for="author in authors">{{author}}</option>
-    </select>
+    <div v-if="submitted">
+      <h3>Thanks to submit your post</h3>
+    </div>
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog title:{{blog.title}}</p>
@@ -39,6 +43,7 @@
 
 <script>
 // Imports
+
 export default {
     data () {
         return {
@@ -48,11 +53,22 @@ export default {
                 categories:[],
                 author:''
             },
-            authors:['lee', 'ninja', 'panda']
+            authors:['lee', 'ninja', 'panda'],
+            submitted: false,
         }
     },
     methods: {
-    }
+      post(){
+        this.$http.post('http://jsonplaceholder.typicode.com/posts', {
+          title: this.blog.title,
+          body: this.blog.content,
+          userId: 1
+        }).then(data => {
+          this.submitted = true;
+          console.log(data);
+        });
+    },
+  }
 }
 </script>
 
