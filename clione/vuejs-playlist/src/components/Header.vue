@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import { bus } from '../main.js';
 
 
 export default {
@@ -14,14 +14,12 @@ export default {
       type: String
     }
   },
-  data () {
-    return {
 
-    }
-  },
   methods:{
     changeTitle: function(){
-      this.$emit('changeTitle', "Vue Wizards")
+      // this.$emit('changeTitle', "Vue Wizards");
+      this.title = "vue Wizards";
+      // bus.$emit("titleChange", "vue Wizards")
     }
   }
 }

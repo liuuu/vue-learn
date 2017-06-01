@@ -29,7 +29,25 @@ export default {
     deleteNinja: function(){
       this.ninjas.pop();
     }
-  }
+  },
+  // beforeCreate(){
+  //   alert("beforeCreate");
+  // },
+  // create(){
+  //   alert("Create");
+  // },
+  // beforeMount(){
+  //   alert("beforeMount");
+  // },
+  // mounted(){
+  //   alert("mounted");
+  // },
+  // beforeUpdate(){
+  //   alert("before Update");
+  // },
+  // updated(){
+  //   alert('updated');
+  // }
 }
 </script>
 
