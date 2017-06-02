@@ -1,6 +1,5 @@
 <template>
   <div class="">
-    
     <show-blog></show-blog>
   </div>
 </template>
