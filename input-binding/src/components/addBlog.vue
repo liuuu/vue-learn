@@ -86,7 +86,7 @@ label{
 }
 input[type="text"], textarea{
     display: block;
-    width: 100%;
+    width: 90%;
     padding: 8px;
 }
 #preview{
