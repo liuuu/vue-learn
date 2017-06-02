@@ -33,6 +33,22 @@ export default {
           console.log(data);
           this.blogs = data.body.slice(0, 10);
         })
+    },
+    filters: {
+      // 'to-uppercase': function(value){
+      //   return value.toUpperCase();
+      // }
+      toUppercase(value){
+        return value.toUpperCase();
+      }
+    },
+    directives: {
+      'rainbow': {
+        bind(el, binding, vnode){
+          el.style.color = "#" + Math.random().toString().slice(2,8);
+          el.style.padding = '10px';
+        }
+      }
     }
 }
 </script>

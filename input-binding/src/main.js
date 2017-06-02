@@ -18,16 +18,16 @@ Vue.directive('theme', {
   }
 })
 
-Vue.directive('rainbow', {
-  bind(el, binding, vnode){
-    el.style.color = "#" + Math.random().toString().slice(2,8);
-    el.style.padding = '10px';
-  }
-})
+// Vue.directive('rainbow', {
+//   bind(el, binding, vnode){
+//     el.style.color = "#" + Math.random().toString().slice(2,8);
+//     el.style.padding = '10px';
+//   }
+// })
 
-Vue.filter('to-uppercase', function(value){
-  return value.toUpperCase();
-})
+// Vue.filter('to-uppercase', function(value){
+//   return value.toUpperCase();
+// })
 
 Vue.filter('snippet', value => {
   return value.slice(0,100) + '...';
